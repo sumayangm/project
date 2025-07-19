@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Pokémon Go Webstore</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .page-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .login-container {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      width: 90%;
+      cursor: pointer;
+    }
+    .facebook {
+      background-color: #3b5998;
+      color: white;
+    }
+    .google {
+      background-color: #db4437;
+      color: white;
+    }
+    .footer {
+      font-size: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+    </ul>
+  </nav>
+  <div class="page-container">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+      </form>
+      <p>or login using:</p>
+      <button class="facebook" onclick="loginWith('Facebook')">Login with Facebook</button>
+      <button class="google" onclick="loginWith('Google')">Login with Google</button>
+      <div class="footer">
+        <small>
+          All assets and information herewith are owned by Pokémon Go. Copyrights belong to them.
+          This is for academic purposes only.
+        </small>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      if (email && password) {
+        alert("Login successful!\n(Just simulated for this academic project)");
+      } else {
+        alert("Please enter both email and password.");
+      }
+    });
+    function loginWith(provider) {
+      alert(`Simulating login with ${provider}...\n(This is a placeholder for OAuth login.)`);
+    }
+  </script>
+</body>
+</html>

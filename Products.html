@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokémon Go Webstore</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 12px;
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+    </ul>
+  </nav>
+  <h1>Pokémon Go Webstore</h1>
+  <div class="product-grid">
+    <div class="product">
+      <img src="images/coin-bundle-medium_v2.jpg" alt="Coin Pack 5500" />
+      <h3>Coin Pack 5500</h3>
+      <p>$29.99 (~₱<span class="php-price" data-usd="29.99"></span>)</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="images/coin-bundle-small_v2.jpg" alt="Coin Pack 2500" />
+      <h3>Coin Pack 2500</h3>
+      <p>$14.99 (~₱<span class="php-price" data-usd="14.99"></span>)</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="images/coin-bundle-xsmall.jpg" alt="Coin Pack 1300" />
+      <h3>Coin Pack 1300</h3>
+      <p>$7.99 (~₱<span class="php-price" data-usd="7.99"></span>)</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="images/coin-bundle-xxsmall.jpg" alt="Coin Pack 100" />
+      <h3>Coin Pack 100</h3>
+      <p>$0.99 (~₱<span class="php-price" data-usd="0.99"></span>)</p>
+      <button>Add to Cart</button>
+    </div>
+  <div class="product">
+  <img src="images/bundle.jpg" alt="Ultra Box" />
+  <h3>Ultra Box</h3>
+  <p>$19.99 (~₱<span class="php-price" data-usd="19.99"></span>)</p>
+  <button>Add to Cart</button>
+</div>
+<div class="product">
+  <img src="images/item_pokemon_storage_upgrade.jpg" alt="Pokémon Storage Upgrade" />
+  <h3>Pokémon Storage Upgrade</h3>
+  <p>$2.00 (~₱<span class="php-price" data-usd="2.00"></span>)</p>
+  <button>Add to Cart</button>
+</div>
+<div class="product">
+  <img src="images/raid_pass_blue-_1_.jpg" alt="Premium Battle Pass" />
+  <h3>Premium Battle Pass</h3>
+  <p>$4.99 (~₱<span class="php-price" data-usd="4.99"></span>)</p>
+  <button>Add to Cart</button>
+</div>
+<div class="product">
+  <img src="images/item_paid_raid_ticket_1.jpg" alt="Remote Raid Pass Bundle" />
+  <h3>Remote Raid Pass Bundle</h3>
+  <p>$5.00 (~₱<span class="php-price" data-usd="5.00"></span>)</p>
+  <button>Add to Cart</button>
+</div>
+<div class="product">
+  <img src="images/item_incubator_basic.jpg" alt="Egg Incubator" />
+  <h3>Egg Incubator</h3>
+  <p>$3.99 (~₱<span class="php-price" data-usd="3.99"></span>)</p>
+  <button>Add to Cart</button>
+</div>
+  </div>
+  <footer>
+    <small>
+      All assets and information are owned by Pokémon Go. This website is for academic purposes only.
+    </small>
+  </footer>
+  <script>
+    const exchangeRate = 58;
+    const prices = document.querySelectorAll(".php-price");
+    prices.forEach(span => {
+      const usd = parseFloat(span.getAttribute("data-usd"));
+      const php = (usd * exchangeRate).toFixed(2);
+      span.textContent = php;
+    });
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Item added to cart! (Simulated)");
+      });
+    });
+  </script>
+</body>
+</html>
+
